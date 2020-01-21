@@ -1,0 +1,21 @@
+<!ELEMENT films (realisateur+, film+)>
+
+    <!ELEMENT realisateur (prenom, nom)>
+    <!ATTLIST realisateur id_realisateur CDATA #REQUIRED>
+
+        <!ELEMENT nom (#PCDATA)>
+        <!ELEMENT prenom (#PCDATA)>
+
+    <!ELEMENT film (titre, resume)>
+    <!ATTLIST film id_film CDATA #REQUIRED>
+    <!ATTLIST film id_realisateur CDATA #REQUIRED>
+    <!ATTLIST film annee CDATA #REQUIRED>
+
+        <!ELEMENT titre (#PCDATA)>
+        <!ELEMENT resume (image?, text)>
+
+            <!ELEMENT image EMPTY>
+            <!ATTLIST image source CDATA #REQUIRED>
+
+            <!ELEMENT text (#PCDATA)>
+
