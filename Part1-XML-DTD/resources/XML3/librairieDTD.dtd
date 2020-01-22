@@ -1,0 +1,45 @@
+<!-- Copyright -->
+<!ENTITY copyright "&#xA9;Librairie &amp; Internet 2020">
+
+<!-- Identité d'un auteur -->
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ENTITY % identite "(nom, prenom?)">
+
+<!-- Texte pouvant contenir des balise HTML -->
+<!ELEMENT strong (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+    <!ATTLIST img src CDATA #REQUIRED>
+    <!ATTLIST img title CDATA #IMPLIED>
+<!ENTITY % texteFormate "(#PCDATA | strong | em | img)*">
+
+<!-- Librairie -->
+<!ELEMENT librairie (en-tete, livre+)>
+
+    <!ELEMENT en-tete %texteFormate;>
+
+    <!ELEMENT livre (titre, (auteur+ | collectif), description, prix)>
+    <!ATTLIST livre isbn ID #REQUIRED>
+
+        <!ELEMENT  titre (#PCDATA)>
+
+        <!ELEMENT auteur %identite;>
+
+
+        <!-- Organisation d'auteur -->
+        <!ELEMENT collectif (direction, membre)>
+
+            <!ELEMENT direction %identite;>
+
+            <!ELEMENT membre (#PCDATA)>
+
+        <!-- Description du livre -->
+        <!ELEMENT  description %texteFormate;>
+
+        <!-- prix du livre -->
+        <!ELEMENT prix EMPTY>
+        <!ATTLIST prix valeur CDATA #REQUIRED>
+        <!ATTLIST prix devise (euro | livre | dollar) "euro">
+        <!ATTLIST prix tva NMTOKEN #FIXED "5.5">
+
