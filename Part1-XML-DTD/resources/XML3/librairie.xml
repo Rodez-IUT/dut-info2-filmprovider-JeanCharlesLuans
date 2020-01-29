@@ -10,7 +10,7 @@
         <strong>A l'IUT de Rodez</strong>
     </en-tete>
 
-    <livre isbn="7891">
+    <livre isbn="L_7891">
         <titre>Le tour du monde en 80 jours</titre>
         <auteur>
             <nom>Vernes</nom>
@@ -22,6 +22,8 @@
             <em>Fineas Fogg</em>
             <img src="/images" title="une planette">Illusatration</img>
         </description>
+
+
 
         <prix valeur="35" devise="dollar" tva="5.5"/>
     </livre>
