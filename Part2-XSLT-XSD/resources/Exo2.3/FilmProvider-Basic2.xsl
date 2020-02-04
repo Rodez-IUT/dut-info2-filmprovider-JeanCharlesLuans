@@ -12,7 +12,7 @@
              <table>
              <thead>
                  <tr>
-                     <th>Titre</th><th>Résumé</th>
+                     <th>Titre</th><th>Résumé</th><th>Nom réalisateur</th><th>Prenom réalisateur</th>
                  </tr>
              </thead>
 
@@ -21,6 +21,8 @@
                 <tr>
                     <td><xsl:value-of select="titre"/></td>
                     <td><xsl:value-of select="resume"/></td>
+                    <td><xsl:value-of select="/films/realisateur[]"/td>
+                    <-- TODO finir la selcetion du realisateur -->
                 </tr>
              </xsl:for-each>
              </tbody>
