@@ -22,10 +22,7 @@
                     <td><xsl:value-of select="titre"/></td>
                     <td><xsl:value-of select="resume"/></td>
                     
-                    <xsl:variable name="idReal">
-                        <xsl:value-of select="@id_realisateur"/>
-                    </xsl:variable>
-                    
+                    <xsl:variable name="idReal" select="@id_realisateur"/>
                     <td><xsl:value-of select="/films/realisateur[@id_realisateur=$idReal]/nom"/></td>
                     <td><xsl:value-of select="/films/realisateur[@id_realisateur=$idReal]/prenom"/></td>
                 </tr>
