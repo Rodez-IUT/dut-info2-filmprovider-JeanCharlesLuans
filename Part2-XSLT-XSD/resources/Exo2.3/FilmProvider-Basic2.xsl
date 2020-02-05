@@ -21,8 +21,13 @@
                 <tr>
                     <td><xsl:value-of select="titre"/></td>
                     <td><xsl:value-of select="resume"/></td>
-                    <td><xsl:value-of select="/films/realisateur[]"/td>
-                    <-- TODO finir la selcetion du realisateur -->
+                    
+                    <xsl:variable name="idReal">
+                        <xsl:value-of select="@id_realisateur"/>
+                    </xsl:variable>
+                    
+                    <td><xsl:value-of select="/films/realisateur[@id_realisateur=$idReal]/nom"/></td>
+                    <td><xsl:value-of select="/films/realisateur[@id_realisateur=$idReal]/prenom"/></td>
                 </tr>
              </xsl:for-each>
              </tbody>
