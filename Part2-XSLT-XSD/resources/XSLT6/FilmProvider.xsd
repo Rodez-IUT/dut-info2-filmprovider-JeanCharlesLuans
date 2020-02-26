@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="films">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="realisateur" type="typeReal"/>
-                <xd:element name="film" />
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+
+    <!-- Element -->
+    <xs:element name="films" type="typeFilms"/>
+    <xs:element name="realisateur" type="typeReal"/>
+    <xs:element name="film" type="typeFilm"/>
+    <xs:element name="nom" type="xs:string"/>
+    <xs:element name="prenom" type="xs:string"/>
+
+    <!-- Films -->
+    <xs:complexType name="typeFilms">
+        <xs:sequence>
+            <xs:element ref="film" />
+            <xs:element ref="realisateur" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Réalisateur -->
+    <xs:complexType name="typeReal">
+        <xs:sequence>
+            <xs:element ref="nom"/>
+            <xs:element ref="prenom"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="attributReal"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="attributReal">
+        
+    </xs:attributeGroup>
+
+
+
 
 </xs:schema>
